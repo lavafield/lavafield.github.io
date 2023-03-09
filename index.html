@@ -1,88 +1,421 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登陆界面</title>
+    <title>个人网站</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-    h1{margin-left: -10px;
-        padding: 1s0px;
-        width: 100%;
-        overflow:hidden;
-        background-color: #2F5DF2;
-        color:black;
-        border-bottom:0px solid white
-    }
-    table{
-        
-        color:black;
-        font-size: 16px;
-        border-spacing: 10px 25px;
-    }
+        body{
+            padding: 100px 6%;
+            background: linear-gradient(to right top, #0E8388, #CBE4DE);
+        }
 
-    .first {
-            text-indent: 70px;}
+        .container {
+            display: flex;
+        }
+
+        .profile {
+            padding: 20px 30px;
+            height: 230px;
+            background: #FFFFFF;
+            text-align: center;
+            flex: 1 1 400px;
+            position: sticky;
+            top: 20px;
+            border-right: 2px solid #333333;
+        }
+
+        .profile img{
+
+        }
+
+        .profile h3 {
+            font-size: 20px;
+        }
+
+        .profile p {
+            color: #2980b9;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .btn {
+            padding: 7px 10px;
+            border-radius: 5px;
+            background: #2980b9;
+            color: #FFFFFF;
+            font-size: 17px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #333333;
+        }
+
+        .information {
+            padding: 20px 30px;
+            flex: 1 1 1000px;
+            background: #FFFFFF; 
+        }
+
+        .title {
+            font-size: 25px;
+            color: #2980b9;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            font-size: 17px;
+            line-height: 2;
+            padding-bottom: 10px;
+            color: #777777;
+        }
+
+        .about .box-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .about .box-container .box {
+            flex: 1 1 250px;
+        }
+
+        .about .box-container .box h3 {
+            font-size: 15px;
+            padding: 10px 0;
+            color: #333333;
+        }
+
+        .about .box-container .box h3 span {
+            color: #777777;
+        }
+
+        .services {
+            padding: 20px 0;
+        }
+
+        .imgbox-container {
+            display: flex;
+        }
+
+        .imgbox-container .box {
+            flex: 1 1 17px;
+            text-align: center;
+            border-radius: 5px;
+            padding: 20px;
+            background: #eeeeee;
+            margin-right: 12px;
+        }
+
+        .imgbox-container .box img {
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .imgbox-container .box h3 {
+            font-size: 15px;
+            color: #777777;
+        }
+
+        .skills .box-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skills .box-container .box {
+            flex: 1 1 300px;
+        }
+
+        .skills .box-container .box:last-child {
+            margin-left: 12px;
+        }
+
+        .progress h3 {
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            color: #333333;
+            font-size: 15px;
+        }
+
+        .progress h3 span {
+            color: #777777;
+        }
+
+        .bar {
+            overflow: hidden;
+            border-radius: 50px;
+            height: 10px;
+            background: #eeeeee;
+        }
+
+        .bar span {
+            background: #2980b9;
+            height: 100%;
+            display: block;
+            border-radius: 50px;
+        }
+
+        .first {
+            width: 20%;
             
-    input:hover{
-        background-color: aliceblue;
-    }
-            
-    input[type="text"]{
-        width:100%;
-        line-height:35px;
-        border: 2px solid #2F5DF2;
-        border-radius: 10px;
+        }
 
-    }
-    input[type="submit"]{
-        text-align: center;
-        width:100%;
-        line-height:35px;
-        background-color:#2F5DF2;
-        color:#FFFFFF;
-    }
+        .second {
+            width: 20%;
+        }
+
+        .third {
+            width: 0%;
+        }
+
+        .fourth {
+            width: 40%;
+        }
+
+        .fifth {
+            width: 20%;
+        }
+
+        .sixth {
+            width: 0%;
+        }
+
+        .seventh{
+            width:40%
+        }
+
+        .eighth{
+            width:5%
+        }
+
+        .experience {
+            margin: 20px 0;
+        }
+
+        .experience .box-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .experience .box-container .box {
+            padding: 20px;
+            border-radius: 5px;
+            flex: 1 1 350px;
+            background: #eeeeee;
+        }
+
+        .experience .box-container .box span {
+            color: #2980b9;
+            font-size: 15px;
+        }
+
+        .experience .box-container .box h3 {
+            color: #333333;
+            font-size: 17px;
+            padding: 5px 0;
+        }
+
+        .experience .box-container .box p {
+            color: #777777;
+            line-height: 2;
+            font-size: 13px;
+        }
+
+        .contact .box-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .contact .box-container .box {
+            flex: 1 1 200px;
+            display: flex;
+        }
+
+        .contact .box-container .box i {
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            font-size: 15px;
+            border-radius: 50%;
+            background: #2980b9;
+            color: #FFFFFF;
+            text-align: center;
+            margin-top: 14px;
+        }
+
+        .contact .box-container .box h3 {
+            font-size: 17px;
+            color: #333333;
+            padding-bottom: 5px;
+        }
+
+        .contact .box-container .box p {
+            font-size: 14px;
+            color: #777777;
+            line-height: 2;
+        }
+
+        .info {
+            padding-left: 10px;
+        }
+
     </style>
 </head>
 
 <body>
-    <h1>欢迎来到我的主页</h1>
-    <h3>Hello World!主页目前施工中</h3>
-<form action="">
-    
-    <table id="table">
-        <tr>
-            <td class="first">用&nbsp;户&nbsp;名</td>
-            <td><input type="text" placeholder="仅可输入英文、数字、下划线"></td>
-        </tr>
-        <tr>
-            <td class="first">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</td>
-            <td><input type="text" placeholder="请输入6~16位密码"></input></td>
-        </tr>
-        <tr>
-            <td class="first">用户类型</td>
-            <td>
-                <select size="1">
-                    <option>用户</option>
-                    <option>管理员</option>
-                    <option>herobrine</option>
-                </select>
-            </td>
+    <div class="container">
 
-        </tr>
+        <div class="profile">
+            <img src="https://s2.loli.net/2023/03/09/XSt6fwHWJrqplGe.jpg" alt="head picture" style=width:150px;height:auto>
+            <h3>LavaField</h3>
+            <p>欢迎来到我的网站！</p>
+            <div class="buttons">
+                <a class="btn" href="javascript:alert('我鸽了，这是暂时的。');">下载高清渲染图片</a>
+                <a class="btn" href="javascript:alert('想多了，这个功能还没做');">发送游戏邀请</a>
+            </div>
+        </div>
 
-        <tr>
-            <td class="first"></td>
-            <td><input type="submit" value="确认无误，点击登录">
-                <input type="checkbox">我已阅读并同意<a href="#">《服务器游玩协议》</a></td>
+        <div class="information">
+
+            <div class="about">
+                <h3 class="title">关于这个网站</h3>
+                <p>这是我对制作个人网站的初次尝试</p>
+                <p>目前的想法是我会在这里记录一些自己没有填完的巨坑，<br>还有就是记录一下看完的电影，通关的游戏，偶尔整点好活</p>
+                <p>欢迎大家监督</p>
+         
+            </div>
+
+            <div class="services">
+                <h3 class="title">今天填坑了吗</h3>
+                <div class="imgbox-container">
+                    <div class="box">
+                        <img src="http://nocturne.bczcdn.com/file/1645598211806_42022/icon-1.png" alt="">
+                        <h3>HTML 5</h3>
+                    </div>
+                    <div class="box">
+                        <img src="http://nocturne.bczcdn.com/file/1645598216656_89057/icon-2.png" alt="">
+                        <h3>CSS 3</h3>
+                    </div>
+                    <div class="box">
+                        <img src="http://nocturne.bczcdn.com/file/1645598219832_4197/icon-3.png" alt="">
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="box">
+                        <img src="https://s2.loli.net/2023/03/09/rPfKxDARiqgVjk4.jpg" alt="">
+                        <h3>Cinema4D</h3>
+                    </div>
+                    <div class="box">
+                        <img src="https://s2.loli.net/2023/03/09/Z5fXRhnj18BmkIQ.jpg" alt="">
+                        <h3>AE</h3>
+                    </div>
+                    <div class="box">
+                        <img src="https://s2.loli.net/2023/03/09/IsWQXM1RhySKxJ4.jpg" alt="">
+                        <h3>PR</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills">
+                <h3 class="title">填坑进度</h3>
+                <div class="box-container">
+                    <div class="box">
+                        <div class="progress">
+                            <h3>Html <span>初学者(20%)</span></h3>
+                            <div class="bar"><span class="first"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Css <span>初学者(20%)</span></h3>
+                            <div class="bar"><span class="second"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Javascript <span>新建文件夹(0%)</span></h3>
+                            <div class="bar"><span class="third"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Python <span>入门(40%)</span></h3>
+                            <div class="bar"><span class="fourth"></span></div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="progress">
+                            <h3>Cinema 4D <span>初学者(20%)</span></h3>
+                            <div class="bar"><span class="fifth"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Blender <span>新建文件夹(0%)</span></h3>
+                            <div class="bar"><span class="sixth"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Premiere Pro<span>入门(40%)</span></h3>
+                            <div class="bar"><span class="seventh"></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Photoshop <span>熟练安装和卸载(5%)</span></h3>
+                            <div class="bar"><span class="eighth"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience">
+                <h3 class="title">个人经历</h3>
+                <!--<div class="box-container">
+                    <div class="box">
+                        <span>1883 - 2021</span>
+                        <h3>范德林德帮</h3>
+                        <p>常驻范德林德帮担任枪手。社会是最好的大学？</p>
+                        <p></p>
+                    </div> 
+                </div>-->
+                <div class="box-container">
+
+                    <div class="box">
+                        <span>2021 - </span>
+                        <h3>海女美术大学</h3>
+                        <p>并兼职在熊先生商会打工。</p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact">
+                <h3 class="title">联系方式</h3>
+                <div class="box-container">
+                    <div class="box">
+                        <i class="fas fa-map"></i>
+                        <div class="info">
+                            <h3>微信</h3>
+                            <p>礼堂顶针</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <i class="fas fa-phone"></i>
+                        <div class="info">
+                            <h3>My Number</h3>
+                            <p>1145141919810</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info">
+                            <h3>My Email</h3>
+                            <p>110</p>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
             
-        </tr>
-
-
-    </table>
-
-</form>
-
+        </div>
+    </div>
 </body>
+
 </html>
