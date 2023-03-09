@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆界面</title>
+    <style>
+
+    h1{margin-left: -10px;
+        padding: 1s0px;
+        width: 100%;
+        overflow:hidden;
+        background-color: #2F5DF2;
+        color:black;
+        border-bottom:0px solid white
+    }
+    table{
+        
+        color:black;
+        font-size: 16px;
+        border-spacing: 10px 25px;
+    }
+
+    .first {
+            text-indent: 70px;}
+            
+    input:hover{
+        background-color: aliceblue;
+    }
+            
+    input[type="text"]{
+        width:100%;
+        line-height:35px;
+        border: 2px solid #2F5DF2;
+        border-radius: 10px;
+
+    }
+    input[type="submit"]{
+        text-align: center;
+        width:100%;
+        line-height:35px;
+        background-color:#2F5DF2;
+        color:#FFFFFF;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>欢迎来到我的主页</h1>
+    <h3>Hello World!主页目前施工中</h3>
+<form action="">
+    
+    <table id="table">
+        <tr>
+            <td class="first">用&nbsp;户&nbsp;名</td>
+            <td><input type="text" placeholder="仅可输入英文、数字、下划线"></td>
+        </tr>
+        <tr>
+            <td class="first">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</td>
+            <td><input type="text" placeholder="请输入6~16位密码"></input></td>
+        </tr>
+        <tr>
+            <td class="first">用户类型</td>
+            <td>
+                <select size="1">
+                    <option>用户</option>
+                    <option>管理员</option>
+                    <option>herobrine</option>
+                </select>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td class="first"></td>
+            <td><input type="submit" value="确认无误，点击登录">
+                <input type="checkbox">我已阅读并同意<a href="#">《服务器游玩协议》</a></td>
+            
+        </tr>
+
+
+    </table>
+
+</form>
+
+</body>
+</html>
